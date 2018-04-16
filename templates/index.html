@@ -16,6 +16,25 @@
             <p>Thermos is a simple bookmarking app. Its a demo to understand Flask Microframework.</p>
         </header>
         <section>
+            <h2>Recently Bookmarked Links</h2>
+            {% if new_bookmarks %}
+                <ul>
+                    {% for bmk, bmitem in new_bookmarks %}
+                        <li>{{ bmitem[0] }} added <a href="{{ bmk }}">{{ bmk }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                No bookmarks added yet.
+            {% endif %}
+        </section>
+
+        <section>
+            <h2>Title: {{ title }}</h2>
+            <p>Text: {{ user.fname }} {{ user.lname }}</p>
+            <p>Text: {{ user.initials() }}</p>
+        </section>
+
+        <section>
             <h2>Article Section h2</h2>
             <p>Test Gibberish data just for fun in flask.</p>
         </section>

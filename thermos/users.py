@@ -8,3 +8,6 @@ class Users:
 
     def __repr__(self):
         return self.initials()
+
+    def getfullname(self):
+        return " ".join([self.fname, self.lname]).strip()
